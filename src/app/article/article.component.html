@@ -1,0 +1,6 @@
+<div class="article">
+  <h1 [ngStyle]="{'background-color': isTechRelated ? 'blue' : 'yellow'}">{{ title }}</h1>
+  <p>{{ content }}</p>
+  <p *ngIf="isTechRelated">This article is tech-related.</p>
+  <p *ngIf="!isTechRelated">This article is not tech-related.</p>
+</div>
