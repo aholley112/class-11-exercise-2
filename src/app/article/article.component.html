@@ -1,6 +1,10 @@
 <div class="article">
-  <h1 [ngStyle]="{'background-color': isTechRelated ? 'blue' : 'yellow'}">{{ title }}</h1>
+  <h1
+  [ngStyle]="{backgroundColor: isTechRelated ? 'blue' : 'yellow'}">{{ title }}</h1>
+  <hr>
+  <p *ngIf="isTechRelated; then ifBlock else elseBlock"></p>
+  <ng-template #ifBlock>Tech Related</ng-template>
+  <ng-template #elseBlock>Not Tech Related</ng-template>
+  <hr>
   <p>{{ content }}</p>
-  <p *ngIf="isTechRelated">This article is tech-related.</p>
-  <p *ngIf="!isTechRelated">This article is not tech-related.</p>
-</div>
+  <button (click)="isTechRelated = !isTechRelated">Change</button>
